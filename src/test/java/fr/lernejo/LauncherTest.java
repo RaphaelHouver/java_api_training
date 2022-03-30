@@ -31,7 +31,7 @@ public class LauncherTest {
                 .withMessage("Utilisation : [Port HTTP] [Adresse du serveur]");
     }
     @Test
-    void PingCorect() throws IOException {
+    void PingCorect() throws IOException, InterruptedException {
 
         String[] arg = {"4000"};
         Launcher.main(arg);
