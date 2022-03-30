@@ -22,18 +22,17 @@ public class LauncherTest {
     @Test
     void test_main_valid_arg() {
         org.assertj.core.api.Assertions.assertThatNoException()
-                .isThrownBy(() -> Launcher.main(new String[] {"9876"}));
+                .isThrownBy(() -> Launcher.main(new String[] {"4007"}));
     }
     @Test
     void test_main_invalid_arg() {
         org.assertj.core.api.Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> Launcher.main(new String[]{"le neuf et le huit"}))
-                .withMessage("Utilisation : [Port HTTP] [Adresse du serveur]");
+                .isThrownBy(() -> Launcher.main(new String[]{"le neuf et le huit"}));
     }
     @Test
     void PingCorect() throws IOException, InterruptedException {
 
-        String[] arg = {"4000"};
+        String[] arg = {"4005"};
         Launcher.main(arg);
 
         URL test_url = new URL("http://localhost:4000/ping");
@@ -53,5 +52,17 @@ public class LauncherTest {
 
         Assertions.assertEquals(message.toString(), "OK", "Bon message !");
 
+    }
+
+    @Test
+    void test_main_null_url() {
+        org.assertj.core.api.Assertions.assertThatNoException()
+                .isThrownBy(() -> Launcher.main(new String[]{"4008", null}));
+    }
+
+    @Test
+    void test_main_valid_two_arg() {
+        org.assertj.core.api.Assertions.assertThatNoException()
+                .isThrownBy(() -> Launcher.main(new String[]{"4008", "http://localhost:4010"}));
     }
 }

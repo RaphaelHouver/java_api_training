@@ -6,20 +6,12 @@ public class Launcher {
             throw new IllegalArgumentException("Utilisation : [Port HTTP] [Adresse du serveur]");
         }
         if (args.length == 1) {
-            try {
-                MyHttpServer httpserver = new MyHttpServer(args[0]);
+                MyHttpServer httpserver = new MyHttpServer(args[0], null);
                 httpserver.createServer();
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Utilisation : [Port HTTP] [Adresse du serveur]");
-            }
         }
         else if (args.length == 2) {
-            try {
-                MyHttpClient client = new MyHttpClient(Integer.parseInt(args[0]));
-                client.send(args[1]);
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Utilisation : [Port HTTP] [Adresse du serveur]");
-            }
+                MyHttpServer httpserver = new MyHttpServer(args[0], args[1]);
+                httpserver.createServer();
         }
 
     }
