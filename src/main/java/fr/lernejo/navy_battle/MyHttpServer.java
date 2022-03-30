@@ -20,6 +20,7 @@ public class MyHttpServer {
         HttpServer server = HttpServer.create(new InetSocketAddress(this.port), 0);
         server.setExecutor(Executors.newFixedThreadPool(1));
         server.createContext("/ping", new PingHandler());
+        //server.createContext("api/game/start", new StartHandler(this));
         server.start();
     }
 
