@@ -60,9 +60,5 @@ public class LauncherTest {
                 .isThrownBy(() -> Launcher.main(new String[]{"4008", null}));
     }
 
-    @Test
-    void test_main_valid_two_arg() {
-        org.assertj.core.api.Assertions.assertThatNoException()
-                .isThrownBy(() -> Launcher.main(new String[]{"4008", "http://localhost:4010"}));
-    }
+    
 }
