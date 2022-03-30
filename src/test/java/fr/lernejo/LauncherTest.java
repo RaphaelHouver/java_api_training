@@ -60,5 +60,5 @@ public class LauncherTest {
                 .isThrownBy(() -> Launcher.main(new String[]{"4008", null}));
     }
 
-    
+
 }

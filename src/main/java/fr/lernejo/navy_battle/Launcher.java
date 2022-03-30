@@ -9,7 +9,7 @@ public class Launcher {
                 MyHttpServer httpserver = new MyHttpServer(args[0], null);
                 httpserver.createServer();
         }
-        else if (args.length == 2) {
+        else {
                 MyHttpServer httpserver = new MyHttpServer(args[0], args[1]);
                 httpserver.createServer();
         }
