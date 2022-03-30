@@ -32,10 +32,10 @@ public class LauncherTest {
     @Test
     void PingCorect() throws IOException, InterruptedException {
 
-        String[] arg = {"4005"};
+        String[] arg = {"4014"};
         Launcher.main(arg);
 
-        URL test_url = new URL("http://localhost:4000/ping");
+        URL test_url = new URL("http://localhost:4014/ping");
         HttpURLConnection connection_test = (HttpURLConnection) test_url.openConnection();
         connection_test.setRequestMethod("GET");
 
